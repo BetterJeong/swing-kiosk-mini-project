@@ -1,4 +1,4 @@
-package frame;
+package menu;
 
 import javax.swing.*;
 import java.util.ArrayList;

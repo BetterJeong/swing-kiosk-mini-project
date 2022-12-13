@@ -1,5 +1,7 @@
 package frame;
 
+import menu.CafeMenu;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -24,4 +26,6 @@ public class CafeFrame extends JFrame {
         cafeMenu = new CafeMenu();
         this.setJMenuBar(cafeMenu);
     }
+
+
 }

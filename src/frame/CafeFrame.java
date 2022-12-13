@@ -2,12 +2,10 @@ package frame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class CafeFrame extends JFrame {
 
     CafeMenu cafeMenu;
-    ArrayList<Category> categories;
 
     public CafeFrame() throws HeadlessException {
 
@@ -25,7 +23,5 @@ public class CafeFrame extends JFrame {
         // 메뉴
         cafeMenu = new CafeMenu();
         this.setJMenuBar(cafeMenu);
-
-        // 카테고리
     }
 }

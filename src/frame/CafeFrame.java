@@ -29,6 +29,15 @@ public class CafeFrame extends JFrame {
     private JCheckBox englishBreakfast;
     private JCheckBox earlGray;
 
+    // 케이크 체크박스
+    private JCheckBox strawberryCake;
+    private JCheckBox chocoCake;
+    private JCheckBox creamCake;
+
+    // 주문서
+    private TextArea orderText;
+
+    // 주문 버튼
 
     public CafeFrame() throws HeadlessException {
 
@@ -65,19 +74,30 @@ public class CafeFrame extends JFrame {
         englishBreakfast = new JCheckBox("잉글리쉬 브렉퍼스트");
         earlGray = new JCheckBox("얼그레이");
 
+        strawberryCake = new JCheckBox("딸기 케이크");
+        chocoCake = new JCheckBox("초코 케이크");
+        creamCake = new JCheckBox("생크림 케이크");
+
+        // 주문서
+        orderText = new TextArea("주문서");
+
         display();
     }
 
     private void display() {
-        JPanel orderPanel = new JPanel(new GridLayout(3, 1));
+        JPanel orderPanel = new JPanel(new GridLayout(5, 1));
 
         JPanel coffeePanel = getCoffeePanel();
         JPanel adePanel = getAdePanel();
         JPanel teaPanel = getTeaPanel();
+        JPanel cakePanel = getCakePanel();
 
         orderPanel.add(coffeePanel);
         orderPanel.add(adePanel);
         orderPanel.add(teaPanel);
+        orderPanel.add(cakePanel);
+        orderPanel.add(orderText);
+        orderText.setEditable(false);
 
         this.add(orderPanel);
     }
@@ -127,5 +147,20 @@ public class CafeFrame extends JFrame {
         teaPanel.add(teaCheckBoxPanel, BorderLayout.SOUTH);
 
         return teaPanel;
+    }
+
+    private JPanel getCakePanel() {
+        JPanel cakePanel = new JPanel();
+        JLabel cakeLabel = new JLabel("케이크");
+        cakePanel.add(cakeLabel, BorderLayout.NORTH);
+
+        JPanel cakeCheckBoxPanel = new JPanel(new FlowLayout());
+        cakeCheckBoxPanel.add(strawberryCake);
+        cakeCheckBoxPanel.add(chocoCake);
+        cakeCheckBoxPanel.add(creamCake);
+
+        cakePanel.add(cakeCheckBoxPanel, BorderLayout.SOUTH);
+
+        return cakePanel;
     }
 }
